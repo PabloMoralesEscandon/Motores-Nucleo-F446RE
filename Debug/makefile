@@ -60,8 +60,8 @@ all: main-build
 main-build: motor.elf secondary-outputs
 
 # Tool invocations
-motor.elf motor.map: $(OBJS) $(USER_OBJS) C:\Users\PA8L0SKY\STM32CubeIDE\workspace_1.15.1\motor\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "motor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\PA8L0SKY\STM32CubeIDE\workspace_1.15.1\motor\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+motor.elf motor.map: $(OBJS) $(USER_OBJS) /home/pablome/github/Motores-Nucleo-F446RE/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "motor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/pablome/github/Motores-Nucleo-F446RE/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
